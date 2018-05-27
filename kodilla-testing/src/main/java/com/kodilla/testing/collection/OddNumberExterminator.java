@@ -4,13 +4,15 @@ import java.util.*;
 
 public class OddNumberExterminator {
 
-    private ArrayList<Integer> evenNumbers;
-
-    public OddNumberExterminator() {
-        evenNumbers = new ArrayList<Integer>();
-    }
+//    private ArrayList<Integer> evenNumbers;
+//
+//    public OddNumberExterminator() {
+//        evenNumbers = new ArrayList<Integer>();
+//    }
 
     public int exterminate (ArrayList<Integer> numbers) {
+
+        ArrayList<Integer> evenNumbers  = new ArrayList<Integer>();
 
         for (int n=0; n < numbers.size(); n++){
 
@@ -22,9 +24,10 @@ public class OddNumberExterminator {
                 }
         }
 
-        System.out.print(evenNumbers.size());
+        return ArrayList<Integer> evenNumbers;
+
     }
-}
+} //System.out.println(exterminate(evenNumbers));
 
 class OddTaker
 {
@@ -38,5 +41,7 @@ class OddTaker
 
         OddNumberExterminator oddExterminator = new OddNumberExterminator();
         oddExterminator.exterminate(redList);
+
+
     }
 }
