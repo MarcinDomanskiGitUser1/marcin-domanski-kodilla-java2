@@ -22,7 +22,7 @@ public class OddNumberExterminator {
                 }
         }
 
-        System.out.print(evenNumbers.size() + " ");
+        System.out.print(evenNumbers.size());
     }
 }
 
