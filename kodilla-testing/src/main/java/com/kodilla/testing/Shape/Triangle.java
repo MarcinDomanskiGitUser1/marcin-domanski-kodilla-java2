@@ -3,23 +3,19 @@ package com.kodilla.testing.Shape;
 public class Triangle implements Shape {
 
     private String shapeName;
-    private int sideA;
-    private int sideB;
-    private int sideC;
-    private double field = sideA * sideB * sideC;
+    private int high;
+    private int base;
 
-    public Triangle(String shapeName, int sideA, int sideB, int sideC) {
+    public Triangle(String shapeName, int high, int base) {
         this.shapeName = shapeName;
-        this.sideA = sideA;
-        this.sideB = sideB;
-        this.sideC = sideC;
-    }
-    @Override
-    public double getField() {
-        return field;
+        this.high = high;
+        this.base = base;
     }
 
-    @Override //dlaczego intelij tak dopisuje
+    public double getField() {
+        return 0.5 * base * high;
+    }
+
     public String getShapeName() {
         return shapeName;
     }

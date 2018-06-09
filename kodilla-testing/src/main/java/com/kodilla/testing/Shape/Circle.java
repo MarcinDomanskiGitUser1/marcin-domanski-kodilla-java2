@@ -4,8 +4,6 @@ public class Circle implements Shape {
 
     private String shapeName;
     private int radius;
-    private double piNumber = 3.14;
-    private double field = piNumber * (radius + radius);
 
     public Circle (String shapeName, int radius) {
         this.shapeName = shapeName;
@@ -13,7 +11,7 @@ public class Circle implements Shape {
     }
 
     public double getField() {
-        return field;
+        return 3.14 * (radius * radius);
     }
     public String getShapeName() {
         return shapeName;

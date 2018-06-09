@@ -5,7 +5,6 @@ public class Square implements Shape {
     private String shapeName;
     private int sideA;
     private int sideB;
-    private double field = sideA * sideB;
 
     public Square(String shapeName, int sideA, int sideB) {
         this.shapeName = shapeName;
@@ -14,7 +13,7 @@ public class Square implements Shape {
     }
 
     public double getField() {
-        return field;
+        return sideA * sideB;
     }
     public String getShapeName() {
         return shapeName;
