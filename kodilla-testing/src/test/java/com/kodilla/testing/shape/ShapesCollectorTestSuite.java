@@ -23,15 +23,15 @@ public class ShapesCollectorTestSuite {
     @Test
     public void testAddFigure() {
         ShapeCollector shapeCollector = new ShapeCollector();
-        Triangle triangle1 = new Triangle("Triangle1", 12, 13, 22);
+        Triangle triangle1 = new Triangle("Triangle1", 12, 13);
         shapeCollector.addFigure(triangle1);
         Assert.assertEquals(1, shapeCollector.getShapes().size());
     }
     @Test
     public void testRemoveFigure() {
         ShapeCollector shapeCollector = new ShapeCollector();
-        Triangle triangle1 = new Triangle("Triangle1", 12, 13, 22);
-        Triangle triangle2 = new Triangle("Triangle2", 5, 20, 14);
+        Triangle triangle1 = new Triangle("Triangle1", 12, 13);
+        Triangle triangle2 = new Triangle("Triangle2", 5, 20);
         shapeCollector.addFigure(triangle1);
         shapeCollector.addFigure(triangle2);
         shapeCollector.removeFigure(triangle2);
@@ -40,9 +40,9 @@ public class ShapesCollectorTestSuite {
     @Test
     public void testGetFigure() {
         ShapeCollector shapeCollector = new ShapeCollector();
-        Triangle triangle1 = new Triangle("Triangle1", 12, 13, 22);
-        Triangle triangle2 = new Triangle("Triangle2", 5, 20, 14);
-        Triangle triangle3 = new Triangle("Triangle3", 9, 20, 25);
+        Triangle triangle1 = new Triangle("Triangle1", 12, 13);
+        Triangle triangle2 = new Triangle("Triangle2", 5, 20);
+        Triangle triangle3 = new Triangle("Triangle3", 9, 20);
 
         shapeCollector.addFigure(triangle1);
         shapeCollector.addFigure(triangle2);
