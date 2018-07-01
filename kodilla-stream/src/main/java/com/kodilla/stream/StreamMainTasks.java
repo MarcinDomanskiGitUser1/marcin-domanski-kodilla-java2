@@ -4,6 +4,7 @@ import com.kodilla.stream.beautifier.PoemBeautifier;
 import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
 
+import java.time.LocalDate;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -33,7 +34,7 @@ public class StreamMainTasks {
         Forum forum = new Forum();
         Map<Integer, ForumUser> resultForumUsersList = forum.getForumUsersList().stream()
                 .filter(forumUser -> forumUser.getSex() == 'M')
-                .filter(forumUser -> forumUser.getBirthDate().getYear() <= 1998)
+                .filter(forumUser -> LocalDate.now().getYear() - forumUser.getBirthDate().getYear() >=20)
                 .filter(forumUser -> forumUser.getAmountPosts() >= 1)
                 .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
         resultForumUsersList.entrySet().stream()
