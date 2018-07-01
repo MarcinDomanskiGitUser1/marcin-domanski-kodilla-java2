@@ -2,6 +2,8 @@ package com.kodilla.stream;
 
 import com.kodilla.stream.book.Book;
 import com.kodilla.stream.book.BookDirectory;
+import com.kodilla.stream.forumuser.Forum;
+import com.kodilla.stream.forumuser.ForumUser;
 import com.kodilla.stream.lambda.ExpressionExecutor;
 import com.kodilla.stream.reference.FunctionalCalculator;
 import com.kodilla.stream.beautifier.PoemBeautifier;
@@ -13,9 +15,24 @@ import java.util.stream.Collectors;
 
 public class StreamMain {
     public static void main(String[] args) {
-        ExpressionExecutor expressionExecutor = new ExpressionExecutor();
 
+        System.out.println();
+        System.out.println("Wynik zadania 7.3");
+        System.out.println("--------------Functional filters in list--");
+        Forum forum = new Forum();
+        Map<Integer, ForumUser> resultForumUsersList = forum.getForumUsersList().stream()
+                .filter(forumUser -> forumUser.getSex() == 'M')
+                .filter(forumUser -> forumUser.getBirthDate().getYear() <= 1998)
+                .filter(forumUser -> forumUser.getAmountPosts() >= 1)
+                .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
+        resultForumUsersList.entrySet().stream()
+                .map(entry -> entry.getValue())
+                .forEach(System.out::println);
+        System.out.println("Koniec zadania");
+
+        System.out.println();
         System.out.println("--------------Calculating expressions with lambdas--");
+        ExpressionExecutor expressionExecutor = new ExpressionExecutor();
         expressionExecutor.executeExpression(10, 5, ((a, b) -> a + b));
         expressionExecutor.executeExpression(10, 5, ((a, b) -> a - b));
         expressionExecutor.executeExpression(10, 5, ((a, b) -> a * b));
@@ -26,21 +43,6 @@ public class StreamMain {
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::addAToB);
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::subBFromA);
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::divideAByB);
-
-        System.out.println("--------------Using string methods and lambda--");
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
-        String someText = "This Text Is Decorate With Lambda";
-        poemBeautifier.beautify(someText, text -> text.toLowerCase());
-        poemBeautifier.beautify("Dać dzisiaj czy jutro?", text -> text.replace('t', 'F'));
-        poemBeautifier.beautify("How are you, programmer!", text -> "*** " + text + " ***");
-        poemBeautifier.beautify(someText, text -> text.substring(5, 26));
-        poemBeautifier.beautify(someText, text -> text.concat(".\nSecond part of text is here!"));
-        poemBeautifier.beautify(someText, tex -> {
-            String result = "";
-            for(int i = 0;i<tex.length(); i++)
-                result = result + (" " + tex.charAt(i));
-            return result;
-        });
 
         System.out.println("--------------Using Stream to generate even numbers from 1 to 20--");
         NumbersGenerator.generateEven(20);
@@ -103,6 +105,5 @@ public class StreamMain {
                 .map(Book::toString)
                 .collect(Collectors.joining("\nnext entry//\n","<<",">>"));
         System.out.println(theResultStringOfBooks);
-
     }
 }
