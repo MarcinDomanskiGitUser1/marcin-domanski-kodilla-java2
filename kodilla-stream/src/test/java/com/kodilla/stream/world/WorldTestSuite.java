@@ -10,19 +10,19 @@ public class WorldTestSuite {
     public void getWorldPeopleQuantity(){
         //Given
         Continent europe = new Continent();
-        Country country1 = new Country("France", "8659516549");
-        Country country2 = new Country("Belgium", "6528756630");
-        Country country3 = new Country("Portugal", "4589684562");
+        Country country1 = new Country("France", new BigDecimal("8659516549"));
+        Country country2 = new Country("Belgium", new BigDecimal("6528756630"));
+        Country country3 = new Country("Portugal", new BigDecimal("4589684562"));
 
         Continent southAmerica = new Continent();
-        Country country4 = new Country("Chile", "1536598412");
-        Country country5 = new Country("Argentina", "4865234478");
-        Country country6 = new Country("Brazil", "2366985448");
+        Country country4 = new Country("Chile", new BigDecimal("1536598412"));
+        Country country5 = new Country("Argentina", new BigDecimal("4865234478"));
+        Country country6 = new Country("Brazil", new BigDecimal("2366985448"));
 
         Continent asia = new Continent();
-        Country country7 = new Country("Vietnam", "8665521243");
-        Country country8 = new Country("Thailand", "6254326552");
-        Country country9 = new Country("Mongolia", "3256324458");
+        Country country7 = new Country("Vietnam", new BigDecimal("8665521243"));
+        Country country8 = new Country("Thailand", new BigDecimal("6254326552"));
+        Country country9 = new Country("Mongolia", new BigDecimal("3256324458"));
 
         World world = new World();
 
