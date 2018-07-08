@@ -9,7 +9,7 @@ public class ArrayIntStreamTestSuite {
         //Given
         int[] someNumbers = {5, 12, 6, 19, 21, 3};
         //When
-        double result = ArrayIntStreamOperations.getAverage(someNumbers);
+        double result = ArrayIntStream.getAverage(someNumbers);
         //Then
         Assert.assertEquals(11, result,0.1);
     }
