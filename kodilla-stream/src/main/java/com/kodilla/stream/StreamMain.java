@@ -16,21 +16,6 @@ import java.util.stream.Collectors;
 public class StreamMain {
     public static void main(String[] args) {
 
-        System.out.println();
-        System.out.println("Wynik zadania 7.3");
-        System.out.println("--------------Functional filters in list--");
-        Forum forum = new Forum();
-        Map<Integer, ForumUser> resultForumUsersList = forum.getForumUsersList().stream()
-                .filter(forumUser -> forumUser.getSex() == 'M')
-                .filter(forumUser -> forumUser.getBirthDate().getYear() <= 1998)
-                .filter(forumUser -> forumUser.getAmountPosts() >= 1)
-                .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
-        resultForumUsersList.entrySet().stream()
-                .map(entry -> entry.getValue())
-                .forEach(System.out::println);
-        System.out.println("Koniec zadania");
-
-        System.out.println();
         System.out.println("--------------Calculating expressions with lambdas--");
         ExpressionExecutor expressionExecutor = new ExpressionExecutor();
         expressionExecutor.executeExpression(10, 5, ((a, b) -> a + b));
