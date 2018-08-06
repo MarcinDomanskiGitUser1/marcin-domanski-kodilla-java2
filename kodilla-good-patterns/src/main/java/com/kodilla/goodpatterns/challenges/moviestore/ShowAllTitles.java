@@ -8,8 +8,8 @@ public class ShowAllTitles {
 
         MovieStore movieStore = new MovieStore();
 
-        String allBookTitles = movieStore.getMovies().entrySet().stream()
-                .flatMap(t -> t.getValue().stream())
+        String allBookTitles = movieStore.getMovies().values().stream()
+                .flatMap(t -> t.stream())
                 .collect(Collectors.joining(" ! "));
         System.out.println(allBookTitles);
     }
