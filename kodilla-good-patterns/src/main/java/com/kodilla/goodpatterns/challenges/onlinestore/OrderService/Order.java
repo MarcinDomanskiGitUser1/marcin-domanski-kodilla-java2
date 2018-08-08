@@ -5,6 +5,9 @@ import com.kodilla.goodpatterns.challenges.onlinestore.CostumerData.CostumerAddr
 import com.kodilla.goodpatterns.challenges.onlinestore.PaymentService.PaymentId;
 import com.kodilla.goodpatterns.challenges.onlinestore.Product;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Order {
 
     public OrderRequest order() {
@@ -16,8 +19,12 @@ public class Order {
         Product product1 = new Product("Buty Giovani", 780.00);
         Product product2 = new Product("Perfumy Hugon Bols", 320.00);
 
+        List<Product> orderedProducts = new ArrayList<>();
+        orderedProducts.add(product1);
+        orderedProducts.add(product2);
+
         PaymentId paymentId = new PaymentId(44856287);
 
-        return new OrderRequest(costumer, paymentId);
+        return new OrderRequest(costumer, paymentId, orderedProducts);
     }
 }

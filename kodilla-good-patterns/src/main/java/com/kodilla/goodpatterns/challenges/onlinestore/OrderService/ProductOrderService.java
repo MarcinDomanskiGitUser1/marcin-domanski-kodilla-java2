@@ -28,6 +28,6 @@ public class ProductOrderService {
                 orderConfirmationService.sendTo(orderRequest.getCostumer());
             }
         }
-        return new OrderDto(orderRequest.getCostumer(), orderRequest.getPaymentId(), ordered, paid);
+        return new OrderDto(orderRequest.getCostumer(), orderRequest.getPaymentId(), orderRequest.getOrderedProducts(), ordered, paid);
     }
 }

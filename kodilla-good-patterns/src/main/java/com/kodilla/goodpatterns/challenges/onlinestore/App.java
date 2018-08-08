@@ -17,7 +17,5 @@ public class App {
 
         ProductOrderService productOrderService = new ProductOrderService(new TransferPaymentService(), new ExecutedOrder(), new DroneDeliveryService(), new EmailConfirmation());
         productOrderService.process(orderRequest);
-
     }
-
 }
