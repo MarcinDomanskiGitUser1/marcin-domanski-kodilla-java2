@@ -20,22 +20,18 @@ public class VegetablesSupplier implements FoodSupplier {
     public String getName() {
         return name;
     }
-
     public String getAddress() {
         return address;
     }
-
     public Map<Product, Integer> getProductList() {
         return productList;
     }
-
     public void getSupplierInfo() {
         System.out.println("Vegetables food supplier name: " + name + ", supplier address: " + address);
     }
 
-    public boolean addProduct(Product product, int availableQuantity) {
+    public void addProduct(Product product, int availableQuantity) {
         productList.put(product, availableQuantity);
-        return true;
     }
 
     public void confirmOrder(Order order, String availability) {
@@ -43,7 +39,7 @@ public class VegetablesSupplier implements FoodSupplier {
         if (availability.equals("available")) {
             System.out.println("Great. Your order is accepted. You have ordered " + order.getOrderedQuantity() + " - " + order.getOrderedProduct().getName() + ".");
 
-            } if (availability.equals("lessAvailable")) {
+        } else if (availability.equals("lessAvailable")) {
             System.out.println("We are sorry. Your order is not accepted. The amount of " + order.getOrderedProduct().getName() + " is less than you order. We can execute your order in 3 days");
 
         }else if (availability.equals("notAvailable")){

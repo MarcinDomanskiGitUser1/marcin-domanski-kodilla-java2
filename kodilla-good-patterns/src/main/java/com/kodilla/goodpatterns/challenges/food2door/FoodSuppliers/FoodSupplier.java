@@ -12,7 +12,7 @@ public interface FoodSupplier {
 
     Map<Product, Integer> getProductList();
 
-    boolean addProduct(Product product, int availableQuantity);
+    void addProduct(Product product, int availableQuantity);
 
     void confirmOrder(Order order, String availability);
 
