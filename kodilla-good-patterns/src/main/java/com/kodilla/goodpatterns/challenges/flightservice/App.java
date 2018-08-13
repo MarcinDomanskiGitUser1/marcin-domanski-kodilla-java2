@@ -18,7 +18,8 @@ public class App {
         String selectedArrivalAirport = "Białystok";
         flightFinder.findArrivalAirport(selectedArrivalAirport, availableFlights);
 
-        String selectedAcrossAirport = "Częstochowa";
-        flightFinder.findAcrossAirport(selectedAcrossAirport, availableFlights);
+        String selectedDepartureAirportWithAcross = "Wrocław";
+        String selectedArrivalAirportWithAcross = "Kraków";
+        flightFinder.findAcrossAirport(selectedDepartureAirportWithAcross, selectedArrivalAirportWithAcross, availableFlights);
     }
 }

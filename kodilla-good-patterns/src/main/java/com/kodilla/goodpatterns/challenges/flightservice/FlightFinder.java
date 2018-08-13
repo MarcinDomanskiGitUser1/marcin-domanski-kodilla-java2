@@ -21,11 +21,11 @@ public class FlightFinder {
                 .forEach(System.out::println);
     }
 
-    public void findAcrossAirport(String acrossAirport, Map<Integer, Flight> availableFlights) {
+    public void findAcrossAirport(String departureAirport, String arrivalAirport, Map<Integer, Flight> availableFlights) {
         System.out.println();
-        System.out.println("Available flights across: " + acrossAirport);
+        System.out.println("Available flights from " + departureAirport + " to " + arrivalAirport + " with across airport.");
         availableFlights.values().stream()
-                .filter(entry -> entry.getAcrossAirport().equals(acrossAirport))
+                .filter(entry -> entry.getDepartureAirport().equals(departureAirport) && entry.getArrivalAirport().equals(arrivalAirport) && !entry.getAcrossAirport().equals("no stop"))
                 .forEach(System.out::println);
     }
 

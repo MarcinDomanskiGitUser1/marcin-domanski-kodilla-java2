@@ -3,7 +3,7 @@ package com.kodilla.goodpatterns.challenges.flightservice;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class Flights {
+public class Flights {
 
     public static Map<Integer, Flight> getAvailableFlights() {
 
