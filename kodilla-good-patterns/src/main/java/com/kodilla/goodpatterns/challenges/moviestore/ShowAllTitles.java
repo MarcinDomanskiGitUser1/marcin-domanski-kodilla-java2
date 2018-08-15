@@ -11,6 +11,6 @@ public class ShowAllTitles {
         String allBookTitles = movieStore.getMovies().values().stream()
                 .flatMap(t -> t.stream())
                 .collect(Collectors.joining(" ! "));
-        System.out.println(allBookTitles);
+                System.out.println(allBookTitles);
     }
 }
