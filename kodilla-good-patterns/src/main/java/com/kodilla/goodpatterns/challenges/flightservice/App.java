@@ -12,14 +12,15 @@ public class App {
 
         Map<Integer, Flight> availableFlights = getAvailableFlights();
 
-        String selectedDepartureAirport = "Wrocław";
-        flightFinder.findDepartureAirport(selectedDepartureAirport, availableFlights);
+        String selectedDepartureAirport = "Lublin";
+        flightFinder.findDepartureAirports(selectedDepartureAirport, availableFlights);
 
-        String selectedArrivalAirport = "Białystok";
-        flightFinder.findArrivalAirport(selectedArrivalAirport, availableFlights);
+        String selectedArrivalAirport = "Poznań";
+        flightFinder.findArrivalAirports(selectedArrivalAirport, availableFlights);
 
-        String selectedDepartureAirportWithAcross = "Wrocław";
-        String selectedArrivalAirportWithAcross = "Kraków";
-        flightFinder.findAcrossAirport(selectedDepartureAirportWithAcross, selectedArrivalAirportWithAcross, availableFlights);
+        String selectedDepartureAirportWithAcross = "Kraków";
+        String selectedArrivalAirportWithAcross = "Wrocław";
+
+        flightFinder.findIndirectFlights(selectedDepartureAirportWithAcross, selectedArrivalAirportWithAcross, availableFlights);
     }
 }
