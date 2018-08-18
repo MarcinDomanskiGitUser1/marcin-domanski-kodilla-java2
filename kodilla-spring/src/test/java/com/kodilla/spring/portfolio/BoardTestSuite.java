@@ -11,17 +11,20 @@ public class BoardTestSuite {
 
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext(BoardConfig.class);
-        Board board = context.getBean(Board.class);
+
+        TaskList toDo = (TaskList) context.getBean("toDoList");
+        TaskList inProgress = (TaskList) context.getBean("inProgressList");
+        TaskList done = (TaskList) context.getBean("doneList");
 
         //When
-        board.getToDoList().addTask("Skończyć moduł 10 do końca tygodnia");
-        board.getInProgressList().addTask("Dokończyć pakiet .portfolio w module spring");
-        board.getDoneList().addTask("Dodać testy do pakietu .library");
+        toDo.addTask("Skończyć moduł 10 do końca tygodnia");
+        inProgress.addTask("Dokończyć pakiet .portfolio w module spring");
+        done.addTask("Dodać testy do pakietu .library");
 
         //Then
-        System.out.println("List of tasks To Do: \n" + board.getToDoList().getTasks().get(0));
-        System.out.println("List of tasks In Progress: \n" + board.getInProgressList().getTasks().get(0));
-        System.out.println("List of tasks Done: \n" + board.getDoneList().getTasks().get(0));
+        System.out.println("List of tasks To Do: \n" + toDo.getTasks().get(0));
+        System.out.println("List of tasks In Progress: \n" + inProgress.getTasks().get(0));
+        System.out.println("List of tasks Done: \n" + done.getTasks().get(0));
 
         }
     }
