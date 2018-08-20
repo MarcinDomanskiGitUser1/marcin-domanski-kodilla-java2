@@ -39,6 +39,6 @@ public class TaskFactoryTestSuite {
         drivingTask.executeTask();
         //Then
         Assert.assertEquals("wyjazd w zimę", drivingTask.getTaskName());
-        Assert.assertEquals(false, drivingTask.isTaskExecuted());
+        Assert.assertEquals(true, drivingTask.isTaskExecuted());
     }
 }
