@@ -17,7 +17,7 @@ public class BoardTestSuite {
         User user2 = new User("projectmanager1", "Nina White");
         User user3 = new User("developer2", "Emilia Stephanson");
         User user4 = new User("developer3", "Konrad Bridge");
-        //tasks
+        //tasksfactory
         Task task1 = new Task("Microservice for taking temperature",
                 "Write and test the microservice taking\n" +
                         "the temperature from external service",
@@ -108,10 +108,10 @@ public class BoardTestSuite {
         Board project = prepareTestData();
         //When
         User user = new User("developer1", "John Smith");
-        List<Task> tasks = project.getTaskLists().stream()//wynik strumienia będzie przypisany do listy tasks
+        List<Task> tasks = project.getTaskLists().stream()//wynik strumienia będzie przypisany do listy tasksfactory
                 .flatMap(l -> l.getTasks().stream())//spłaszczenie strumienia sprawia że dostajemy strumień zadań ze wszystkich list
                 .filter(t -> t.getAssignedUser().equals(user))//filtr strumienia wykorzystuje metodę equals zamieszczoną w klasie User, dzięki temu wybierze tylko zadania przypisane do nazwy developer1
-                .collect(toList());//tworzona jest kolekcja która jest przypisywana do zmiennej tasks
+                .collect(toList());//tworzona jest kolekcja która jest przypisywana do zmiennej tasksfactory
         //Then
         Assert.assertEquals(2, tasks.size());
         Assert.assertEquals(user, tasks.get(0).getAssignedUser());
@@ -129,7 +129,7 @@ public class BoardTestSuite {
                 .filter(undoneTasks::contains)//wyciągnięcie wszystkich undoneTasks
                 .flatMap(tl -> tl.getTasks().stream())
                 .filter(t -> t.getDeadline().isBefore(LocalDate.now()))
-                .collect(toList());//przypisanie wyniku do zmiennej tasks
+                .collect(toList());//przypisanie wyniku do zmiennej tasksfactory
         //Then
         Assert.assertEquals(1, tasks.size());
         Assert.assertEquals("HQLs for analysis", tasks.get(0).getTitle());

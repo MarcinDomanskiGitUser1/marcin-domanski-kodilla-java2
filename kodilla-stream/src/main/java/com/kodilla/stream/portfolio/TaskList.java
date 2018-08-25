@@ -27,7 +27,7 @@ public final class TaskList {
 
     @Override
     public String toString() {
-        return "TaskList{" + "name='" + name + '\'' + ",\n" + "tasks=\n" + tasks + "\n" + '}' + "\n";
+        return "TaskList{" + "name='" + name + '\'' + ",\n" + "tasksfactory=\n" + tasks + "\n" + '}' + "\n";
 
     }
     @Override

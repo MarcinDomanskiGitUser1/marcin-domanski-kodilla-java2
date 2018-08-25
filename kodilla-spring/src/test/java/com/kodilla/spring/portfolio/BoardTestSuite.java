@@ -22,9 +22,9 @@ public class BoardTestSuite {
         done.addTask("Dodać testy do pakietu .library");
 
         //Then
-        System.out.println("List of tasks To Do: \n" + toDo.getTasks().get(0));
-        System.out.println("List of tasks In Progress: \n" + inProgress.getTasks().get(0));
-        System.out.println("List of tasks Done: \n" + done.getTasks().get(0));
+        System.out.println("List of tasksfactory To Do: \n" + toDo.getTasks().get(0));
+        System.out.println("List of tasksfactory In Progress: \n" + inProgress.getTasks().get(0));
+        System.out.println("List of tasksfactory Done: \n" + done.getTasks().get(0));
 
         }
     }

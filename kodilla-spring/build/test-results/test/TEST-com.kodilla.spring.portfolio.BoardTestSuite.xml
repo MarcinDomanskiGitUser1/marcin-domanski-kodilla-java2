@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.spring.portfolio.BoardTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-08-18T19:27:01" hostname="Mac-mini-Marcin.local" time="0.024">
+  <properties/>
+  <testcase name="testTaskAdd" classname="com.kodilla.spring.portfolio.BoardTestSuite" time="0.024"/>
+  <system-out><![CDATA[2018-08-18 21:27:01.951  INFO 4330 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1f650172: startup date [Sat Aug 18 21:27:01 CEST 2018]; root of context hierarchy
+List of tasks To Do: 
+Skończyć moduł 10 do końca tygodnia
+List of tasks In Progress: 
+Dokończyć pakiet .portfolio w module spring
+List of tasks Done: 
+Dodać testy do pakietu .library
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
