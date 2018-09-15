@@ -1,6 +1,6 @@
 package com.kodilla.goodpatterns.challenges.flightservice;
 
-public final class  Flight {
+public final class Flight {
 
     private final String arrivalAirport;
     private final String departureAirport;

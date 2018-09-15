@@ -16,11 +16,12 @@
 *.iws
 *.iml
 *.ipr
+*.html
+*.class
 /out/
 
 ### NetBeans ###
 /nbproject/private/
-/build/
 /nbbuild/
 /dist/
 /nbdist/
