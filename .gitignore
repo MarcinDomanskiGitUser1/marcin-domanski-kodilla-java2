@@ -1,4 +1,5 @@
 .gradle
+gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 
@@ -12,13 +13,15 @@
 .sts4-cache
 
 ### IntelliJ IDEA ###
+gradlew
+gradlew.bat
 .idea
 *.iws
 *.iml
 *.ipr
 *.html
 *.class
-/out/
+out
 
 ### NetBeans ###
 /nbproject/private/
