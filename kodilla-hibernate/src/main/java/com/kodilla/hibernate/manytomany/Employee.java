@@ -6,8 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedQuery(
-        name = "Employee.retrieveEmployeeByName",
-        query = "FROM Employee WHERE lastname = :LASTNAME"
+            name = "Employee.retrieveEmployeeByName",
+            query = "FROM Employee WHERE lastname = :LASTNAME"
+            )
+
+@NamedNativeQuery(
+        name = "Employee.retrieveEmployeeByFewLetters",
+        query = "SELECT * FROM EMPLOYEES WHERE LASTNAME LIKE CONCAT ('%',:SOMELETTERS,'%')",
+        resultClass = Employee.class
 )
 
 @Entity
