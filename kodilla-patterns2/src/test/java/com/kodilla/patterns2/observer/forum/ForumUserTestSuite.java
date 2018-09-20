@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class ForumUserTestSuite {
 
     @Test
-    public void shouldDoSomething() {
+    public void testUpdate() {
         // Given
         ForumTopic javaHelpForum = new JavaHelperForumTopic();
         ForumTopic javaToolsForum = new JavaToolsForumTopic();
