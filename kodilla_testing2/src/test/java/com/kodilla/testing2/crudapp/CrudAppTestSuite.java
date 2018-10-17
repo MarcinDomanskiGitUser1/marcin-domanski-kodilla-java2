@@ -9,7 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
 import java.util.Random;
 import java.util.stream.Collectors;
 
@@ -65,6 +64,7 @@ public class CrudAppTestSuite {
                     buttonCreateCard.click();
                 });
         Thread.sleep(5000);
+        webDriver.switchTo().alert().accept();
     }
     private boolean checkTaskExistsInTrello(String taskName) throws InterruptedException{
         final String TRELLO_URL = "https://trello.com/login";
@@ -93,10 +93,25 @@ public class CrudAppTestSuite {
 
         return result;
     }
+    private void deleteTaskFromCRUD(String taskName) throws InterruptedException{
+
+        Thread.sleep(3000);
+
+        while(!webDriver.findElement(By.xpath("//select[1]")).isDisplayed());
+
+        webDriver.findElements(By.xpath("//form[@class = \"datatable__row\"]")).stream()
+                .filter(form -> form.findElement(By.xpath(".//p[@class = \"datatable__field-value\"]"))
+                        .getText().equals(taskName))
+                .forEach(findForm -> {
+                    WebElement deleteButton = findForm.findElement(By.xpath(".//fieldset/button[text() = 'Delete']"));
+                    deleteButton.click();
+                });
+    }
     @Test
     public void findNewTaskInTrello() throws InterruptedException {
         String taskNameFromCrudTest = crudAppCreateTaskTest();
         sendTestTaskToTrello(taskNameFromCrudTest);
+        deleteTaskFromCRUD(taskNameFromCrudTest);
         Assert.assertTrue(checkTaskExistsInTrello(taskNameFromCrudTest));
     }
 }
